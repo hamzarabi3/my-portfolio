@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Linkedin } from 'lucide-react';
+import projectsData from './projects.json';
 
 const App = () => {
   const [name, setName] = useState('');
@@ -49,16 +50,16 @@ const App = () => {
         </section>
 
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {[1, 2, 3].map((project) => (
-            <div key={project} className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
-              <img src={`https://picsum.photos/400/300?random=${project}`} alt={`Project ${project}`} className="w-full h-48 object-cover" />
+          {projectsData.map((project) => (
+            <div key={project.id} className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
+              <img src={`${process.env.PUBLIC_URL}/images/${project.image}`} alt={project.title} className="w-full h-48 object-cover" />
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Project {project}</h3>
-                <p className="text-gray-700 mb-4">Description of Project {project}. This project showcases my skills in web development and design.</p>
-                <p className="text-gray-600 mb-4"><strong>Technologies:</strong> React, Node.js, CSS</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">{project.title}</h3>
+                <p className="text-gray-700 mb-4">{project.description}</p>
+                <p className="text-gray-600 mb-4"><strong>Technologies:</strong> {project.technologies.join(', ')}</p>
                 <div className="flex space-x-4">
-                  <a href="#" className="text-blue-600 hover:text-blue-800">GitHub Repo</a>
-                  <a href="#" className="text-blue-600 hover:text-blue-800">Live Demo</a>
+                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">GitHub Repo</a>
+                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">Live Demo</a>
                 </div>
               </div>
             </div>

@@ -1,0 +1,29 @@
+[
+    {
+      "id": 1,
+      "title": "Build an image conversion app with aws lambda and s3",
+      "description": "This projects uses aws lambda to run fastapi server for image conversion",
+      "technologies": ["FastAPI", "aws lambda", "Docker","aws CDK"],
+      "image": "image_converter.png",
+      "githubUrl": "https://github.com/hamzarabi3/image_converter_lambda_fastapi_cdk",
+      "liveUrl": "http://image-converter-genie.s3-website.eu-central-1.amazonaws.com/"
+    },
+    {
+      "id": 2,
+      "title": "Project 2",
+      "description": "Description of Project 2. This project demonstrates my ability to work with APIs and create dynamic web applications.",
+      "technologies": ["React", "Express", "MongoDB"],
+      "image": "project2.jpg",
+      "githubUrl": "https://github.com/yourusername/project2",
+      "liveUrl": "https://project2-demo.com"
+    },
+    {
+      "id": 3,
+      "title": "Project 3",
+      "description": "Description of Project 3. This project highlights my skills in mobile app development.",
+      "technologies": ["React Native", "Firebase"],
+      "image": "project3.jpg",
+      "githubUrl": "https://github.com/yourusername/project3",
+      "liveUrl": "https://project3-demo.com"
+    }
+  ]
